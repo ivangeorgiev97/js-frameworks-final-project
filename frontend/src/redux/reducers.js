@@ -11,4 +11,24 @@ function memories(state = [], action) {
     }
 }
 
-export default combineReducers({memories});
+function sortBy(state = 'id', actions) {
+    switch(action.type) {
+        case actions.SET_SORT_BY: {
+            return action.payload
+        }
+        default: 
+            return state;
+    }
+}
+
+function idFilter(state = 1, action) {
+    switch(action.type) {
+        case actions.SET_SELECTED_GENRES: {
+            return action.payload
+        }
+        default: 
+            return state;
+    }
+}
+
+export default combineReducers({memories, sortBy, idFilter});
