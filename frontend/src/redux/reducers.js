@@ -11,7 +11,7 @@ function memories(state = [], action) {
     }
 }
 
-function sortBy(state = 'id', actions) {
+function sortBy(state = 'id', action) {
     switch(action.type) {
         case actions.SET_SORT_BY: {
             return action.payload

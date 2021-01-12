@@ -5,7 +5,7 @@ export function setMemories(memories){
     return {type: actions.SET_MEMORIES, payload: memories};
 }
 
-export const getMovies = params => async dispatch => {
+export const getMemories = params => async dispatch => {
     try {
         const response = await apiService.get(
             'getAll',
