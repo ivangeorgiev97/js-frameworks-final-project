@@ -23,7 +23,7 @@ function sortBy(state = 'id', action) {
 
 function idFilter(state = 1, action) {
     switch(action.type) {
-        case actions.SET_SELECTED_GENRES: {
+        case actions.SET_ID_FILTER: {
             return action.payload
         }
         default: 
