@@ -45,15 +45,9 @@ const apiService = {
         return new Promise((resolve, reject) => {
             axios(data)
             .then((response) => {
-                if (options.success) {
-                    options.success(response.data);
-                }
                 resolve(response.data);
             })
             .catch((error) => {
-                if (options.failure) {
-                    options.failure(error);
-                }
                 reject(error);
             });
 

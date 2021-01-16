@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import {Button} from 'reactstrap';
 
 const Memory = (props) => {
     const description = props.description;
@@ -13,7 +14,7 @@ const Memory = (props) => {
                     {description &&
                     <p className="card-text">{props.description}</p>
                     }
-                    <button type="button" className="btn btn-danger remove-card">Изтрий</button>
+                    <Button color="danger" onClick={() => props.onRemoveMemory(props.id)}>Изтрий</Button>
                 </div>
             </div>
         </>

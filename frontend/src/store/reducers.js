@@ -6,23 +6,23 @@ function memories(state = [], action) {
         case actions.SET_MEMORIES: {
             return [...action.payload]
         }
-        default: 
-            return state;
-    }
-}
-
-function addMemory(state = [], action) {
-    switch(action.type) {
         case actions.ADD_MEMORY: {
             return [
                 ...state,
                 {
+                    id: action.payload.id,
                     title: action.payload.title,
-                    description: action.payload.description
+                    description: action.payload.description,
+                    created_at: action.payload.created_at
                 }
             ]
         }
-        default:
+        case actions.REMOVE_MEMORY: {
+            return [
+                ...state.filter((memory) => memory.id !== action.payload)
+            ]
+        }
+        default: 
             return state;
     }
 }
@@ -63,5 +63,4 @@ function darkMode(state = false, action) {
     }
 }
 
-
-export default combineReducers({memories, addMemory, filtersAndSorting, darkMode});
+export default combineReducers({memories, filtersAndSorting, darkMode});

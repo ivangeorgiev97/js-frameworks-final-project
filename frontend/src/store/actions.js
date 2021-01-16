@@ -33,6 +33,22 @@ export const addMemory = params => async dispatch => {
     }
 }
 
+export function removeMemory(memory){
+    return {type: actions.REMOVE_MEMORY, payload: memory};
+}
+
+export const deleteMemory = params => async dispatch => {
+    try {
+        const response = await apiService.delete(
+            `delete/${params.id}`,
+            params
+        )
+        if(response) dispatch(removeMemory(params.id));
+    } catch(error) {
+        console.log(error)
+    }
+}
+
 export function setSortBy(sortBy){
     return {type: actions.SET_SORT_BY, payload: sortBy};
 }
