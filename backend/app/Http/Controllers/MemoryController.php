@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 
 class MemoryController extends Controller
 {
-    public function getAll($fromId = null, $sortCriteria = null)
+    public function getAll(Request $request)
     {
+        $sortCriteria = $request['sortBy'] ? $request['sortBy'] : 'id';
+        $fromId = $request['id'] ? $request['id'] : 1;
+
         switch ($sortCriteria) {
             case 'id':
                 return isset($fromId) && is_numeric($fromId) ? response()->json(MemoryModel::select('*')->where('id', '>=', $fromId)->orderBy('id')->get()) : response()->json(MemoryModel::select('*')->orderBy('created_at', 'desc')->get());

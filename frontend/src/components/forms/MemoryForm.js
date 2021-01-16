@@ -1,6 +1,8 @@
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const MemoryForm = (props) => {
+
+    
     return (
         <>
             <Form id="add-form" name="add-form">

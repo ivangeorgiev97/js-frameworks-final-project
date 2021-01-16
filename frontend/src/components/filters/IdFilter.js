@@ -1,29 +1,18 @@
-import React from 'react' ;// , {useEffect} from 'react'; // , useCallback
+import React from 'react' ;
 import { FormGroup, Label, Input } from 'reactstrap';
-/* TODO - IMPORT ACTIONS TOO */
-import { /* useDispatch, */ useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setIdFilter } from '../../redux/actions';
 
 
 const IdFilter = (props) => {
     const idFilter = useSelector(state => state.idFilter);
 
-    // const dispatch = useDispatch();
-
-/*     const loadMemories = useCallback(() => {
-        dispatch(getMemories({
-            idFilter: idFilter,
-            sortBy: sortBy,
-        }));
-      }, [dispatch, idFilter, sortBy]); */
-    
-
-/*     useEffect(() => {
-        loadMemories();
-    }, [loadMemories]); */
+    const dispatch = useDispatch();
 
     const changeIdFilter = (event) => {
-        /* dispatch(setIdFilter(event.target.value)); */
+        dispatch(setIdFilter(event.target.value));
     }
+
     return (
         <FormGroup>
             <Label for="select-id">ID филтриране</Label>

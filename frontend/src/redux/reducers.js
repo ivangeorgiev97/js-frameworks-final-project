@@ -11,20 +11,26 @@ function memories(state = [], action) {
     }
 }
 
-function sortBy(state = 'id', action) {
+function filtersAndSorting(state = {
+    sortBy: 'id',
+    idFilter: 1,
+}, action) {
     switch(action.type) {
         case actions.SET_SORT_BY: {
-            return action.payload
+            return {
+                ...state, 
+                ...{
+                    sortBy: action.payload,
+                }
+            }
         }
-        default: 
-            return state;
-    }
-}
-
-function idFilter(state = 1, action) {
-    switch(action.type) {
         case actions.SET_ID_FILTER: {
-            return action.payload
+            return {
+                ...state,
+                ...{
+                    idFilter: action.payload
+                }
+            }
         }
         default: 
             return state;
@@ -42,4 +48,4 @@ function darkMode(state = false, action) {
 }
 
 
-export default combineReducers({memories, sortBy, idFilter, darkMode});
+export default combineReducers({memories, filtersAndSorting, darkMode});

@@ -11,7 +11,7 @@ export const getMemories = params => async dispatch => {
             'getAll',
             params,
         )
-        dispatch(setMemories(response.results));
+        dispatch(setMemories(response));
     } catch (error) {
         console.log(error)
     }
