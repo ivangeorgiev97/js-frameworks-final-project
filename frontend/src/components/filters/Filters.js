@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMemories } from '../../redux/actions';
+import { getMemories } from '../../store/actions';
 import SortBy from './SortBy';
 import IdFilter from './IdFilter';
 import {Button} from 'reactstrap';

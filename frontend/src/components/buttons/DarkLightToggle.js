@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from "react-redux";
-import { setDarkMode } from '../../redux/actions';
+import { setDarkMode } from '../../store/actions';
 import { Button } from 'reactstrap';
 
 

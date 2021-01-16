@@ -1,7 +1,7 @@
 import React from 'react' ;
 import { FormGroup, Label, Input } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { setIdFilter } from '../../redux/actions';
+import { setIdFilter } from '../../store/actions';
 
 
 const IdFilter = (props) => {

@@ -11,6 +11,22 @@ function memories(state = [], action) {
     }
 }
 
+function addMemory(state = [], action) {
+    switch(action.type) {
+        case actions.ADD_MEMORY: {
+            return [
+                ...state,
+                {
+                    title: action.payload.title,
+                    description: action.payload.description
+                }
+            ]
+        }
+        default:
+            return state;
+    }
+}
+
 function filtersAndSorting(state = {
     sortBy: 'id',
     idFilter: 1,
@@ -48,4 +64,4 @@ function darkMode(state = false, action) {
 }
 
 
-export default combineReducers({memories, filtersAndSorting, darkMode});
+export default combineReducers({memories, addMemory, filtersAndSorting, darkMode});

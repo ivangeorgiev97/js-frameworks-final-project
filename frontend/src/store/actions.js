@@ -5,13 +5,29 @@ export function setMemories(memories){
     return {type: actions.SET_MEMORIES, payload: memories};
 }
 
+export function setNewMemory(memory){
+    return {type: actions.ADD_MEMORY, payload: memory};
+}
+
 export const getMemories = params => async dispatch => {
     try {
         const response = await apiService.get(
             'getAll',
-            params,
+            params
         )
         dispatch(setMemories(response));
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const addMemory = params => async dispatch => {
+    try {
+        const response = await apiService.post(
+            'create',
+            params
+        )
+        dispatch(setNewMemory(response));
     } catch (error) {
         console.log(error)
     }

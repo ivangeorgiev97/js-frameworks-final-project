@@ -1,7 +1,7 @@
 import React from 'react' ;
 import { FormGroup, Label, Input } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSortBy } from '../../redux/actions';
+import { setSortBy } from '../../store/actions';
 
 const SortBy = (props) => {
 
