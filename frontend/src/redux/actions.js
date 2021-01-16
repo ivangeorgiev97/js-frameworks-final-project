@@ -24,3 +24,7 @@ export function setSortBy(sortBy){
 export function setIdFilter(idFilter){
     return {type: actions.SET_ID_FILTER, payload: idFilter};
 }
+
+export function setDarkMode(value){
+    return {type: actions.SET_DARK_MODE, payload: value};
+}

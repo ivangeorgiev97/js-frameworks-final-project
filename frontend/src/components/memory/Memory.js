@@ -1,9 +1,13 @@
+import { useSelector } from 'react-redux';
+
 const Memory = (props) => {
     const description = props.description;
 
+    const isDarkMode = useSelector(state => state.darkMode);
+
     return (
         <>
-            <div className="card">
+            <div className={`card ${isDarkMode ? 'bg-dark text-white' : ''}`}>
                 <div className="card-body">
                     <h5 className="card-title">{props.title}</h5>
                     {description &&

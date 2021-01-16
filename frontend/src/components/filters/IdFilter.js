@@ -26,7 +26,7 @@ const IdFilter = (props) => {
     }
     return (
         <FormGroup>
-            <Label for="select-id">ID филтриране (без ajax заявка)</Label>
+            <Label for="select-id">ID филтриране</Label>
             <Input 
             onChange={changeIdFilter} 
             value={idFilter}
@@ -35,9 +35,9 @@ const IdFilter = (props) => {
             name="select-id" 
             id="select-id"
             >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="15">15</option>
+                <option value="1">Над id 1</option>
+                <option value="2">Над id 2</option>
+                <option value="15">Над id 15</option>
             </Input>
         </FormGroup>
     );

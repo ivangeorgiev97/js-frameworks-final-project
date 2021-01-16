@@ -31,4 +31,15 @@ function idFilter(state = 1, action) {
     }
 }
 
-export default combineReducers({memories, sortBy, idFilter});
+function darkMode(state = false, action) {
+    switch(action.type) {
+        case actions.SET_DARK_MODE: {
+            return action.payload
+        }
+        default: 
+            return state;
+    }
+}
+
+
+export default combineReducers({memories, sortBy, idFilter, darkMode});
