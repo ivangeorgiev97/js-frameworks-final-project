@@ -14,6 +14,7 @@ function Home(props) {
                 <DarkLightToggle />
                 <div className="card-list">
                     <Memory title="Заглавие" description="Описание" />
+                    <Memory title="Заглавие" />
                 </div>
             </div>
         </div>

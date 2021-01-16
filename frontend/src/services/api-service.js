@@ -20,15 +20,6 @@ const apiService = {
             failure,
         });
     },
-    put(url, data, success, failure) {
-        return this.request({
-            method: 'put',
-            url,
-            data,
-            success,
-            failure,
-        });
-    },
     delete(url, success, failure) {
         return this.request({
             method: 'delete',
